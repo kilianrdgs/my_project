@@ -4,11 +4,12 @@
 namespace App\Controller;
 
 // Ces deux lignes importent les classes nécessaires de Symfony
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 // Vous définissez une classe appelée DefaultController
-class DefaultController {
+class DefaultController extends AbstractController{
 
     // Vous utilisez une annotation Symfony pour définir une route pour cette méthode
     // La route est associée à l'URL "/" et est nommée "app_index"
@@ -18,7 +19,7 @@ class DefaultController {
     public function index(){
 
         // Cette méthode renvoie une nouvelle instance de la classe Response avec le contenu 'bonjour'
-        return new Response('bonjour');
+        return $this->Render('base.html.twig');
     }
 
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccueilController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 <style>
@@ -9,12 +9,13 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+    <h1>Accueil ( {{ controller_name }} )</h1>
+    <p>Ceci est la page restreinte (uniquement accessible en étant Log)</p>
+    <p>Bonjour <span style="color: red">{{ app.user.userIdentifier }} </span></p>
     <ul>
-        <li>Your controller at <code><a href="{{ '/Users/kilianrodrigues/Desktop/code/my_project/src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/kilianrodrigues/Desktop/code/my_project/templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
+        <li>
+            <a href="{{ path('app_logout') }}">Se deconnecter</a>
+        </li>
     </ul>
 </div>
 {% endblock %}
